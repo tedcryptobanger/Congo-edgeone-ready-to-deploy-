@@ -1,0 +1,136 @@
+:root{
+  --red-deep:#7a0f16; --red-mid:#a3141c; --red-bright:#c81e28;
+  --gold:#f2b632; --orange:#e8722c; --card-bg-alt:#fff;
+  --airtel-red:#e30613; --text-dark:#3a3a3a; --text-grey:#7a7a7a;
+  --border-blue:#1857c4; --footer-bg:#f4f4f4;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#fff;color:#fff;min-height:100svh;overflow-x:hidden;}
+.hidden{display:none !important;}
+.screen{min-height:100svh;width:100%;position:relative;}
+
+/* PLANS */
+#screen-plans{
+  background:radial-gradient(circle at 15% 0%,rgba(255,255,255,0.08),transparent 40%),
+    linear-gradient(160deg,var(--red-mid) 0%,var(--red-deep) 55%,#5c0b10 100%);
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  display:flex;flex-direction:column;
+}
+header{padding:18px 12px 20px;display:flex;align-items:center;justify-content:space-between;gap:6px;background:linear-gradient(180deg,rgba(0,0,0,0.15),transparent);}
+.brand{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.airtel-mark-icon{width:20px;height:20px;border-radius:50% 50% 50% 0;background:#fff;position:relative;transform:rotate(-45deg);}
+.airtel-mark-icon::after{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--red-bright);}
+.airtel-wordmark{font-weight:800;font-size:20px;color:#fff;display:block;}
+.airtel-tag{font-size:8px;letter-spacing:0.5px;color:rgba(255,255,255,0.75);text-transform:uppercase;}
+.collab{text-align:center;flex:1;min-width:0;}
+.collab .eyebrow{font-size:clamp(7px,2vw,9px);letter-spacing:1px;color:rgba(255,255,255,0.75);text-transform:uppercase;white-space:nowrap;}
+.collab .starlink-row{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:2px;flex-wrap:wrap;}
+.collab .starlink-row .big,.collab .starlink-row .brand-name{font-weight:800;font-size:clamp(11px,3.6vw,15px);}
+.hero{text-align:center;padding:10px 20px 26px;}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.25);padding:7px 16px;border-radius:30px;font-size:13px;font-weight:600;color:#f4e9d8;margin-bottom:22px;}
+h1{font-size:clamp(26px,8vw,34px);line-height:1.12;font-weight:800;letter-spacing:-0.5px;}
+h1 .accent{color:var(--gold);display:block;}
+.sub{margin-top:14px;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,0.82);max-width:340px;margin:14px auto 0;}
+.plans{padding:4px 14px 26px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.plan{background:var(--card-bg-alt);border-radius:16px;padding:18px 14px 16px;color:#2a2a2a;position:relative;box-shadow:0 10px 22px rgba(0,0,0,0.25);display:flex;flex-direction:column;align-items:center;border:2px solid transparent;}
+.plan.highlight{border-color:var(--gold);background:linear-gradient(180deg,#fffdf6,#fff9ec);}
+.plan.full{grid-column:1 / -1;}
+.badge{position:absolute;top:-13px;left:14px;background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;box-shadow:0 4px 10px rgba(0,0,0,0.25);}
+.badge.crown{background:linear-gradient(90deg,#f2b632,#e8942c);}
+.network{font-size:12px;color:#9b9b9b;font-weight:600;letter-spacing:0.5px;margin-top:4px;}
+.data-amount{display:flex;align-items:flex-start;gap:2px;margin:6px 0 2px;}
+.data-amount .num{font-size:clamp(32px,10vw,44px);font-weight:800;color:var(--red-bright);line-height:1;font-style:italic;}
+.data-amount .unit{font-size:15px;font-weight:700;color:var(--red-bright);margin-top:6px;}
+.validity{font-size:13px;color:#8a8a8a;font-weight:500;margin-bottom:10px;}
+.divider{width:100%;height:1px;background:#efefef;margin-bottom:12px;}
+.price{font-size:24px;font-weight:800;color:#1a1a1a;margin-bottom:12px;}
+.price sup{font-size:14px;font-weight:700;margin-right:2px;position:relative;top:-2px;}
+.choose-btn{width:100%;min-height:44px;background:var(--red-bright);color:#fff;border:none;border-radius:24px;padding:12px 6px;font-size:clamp(11px,3.2vw,12.5px);font-weight:700;letter-spacing:0.4px;cursor:pointer;box-shadow:0 6px 14px rgba(200,30,40,0.4);transition:transform .15s ease;touch-action:manipulation;}
+.choose-btn:active{transform:scale(0.98);}
+.plan.full .data-amount .num{font-size:48px;}
+.footer-strip{margin:6px 14px 18px;background:rgba(0,0,0,0.22);border-radius:14px;padding:16px 10px;display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;row-gap:12px;font-size:12px;font-weight:600;color:#f4e9d8;border:1px solid rgba(255,255,255,0.12);}
+.footer-strip .sep{color:rgba(255,255,255,0.3);}
+.copyright{text-align:center;font-size:11px;color:rgba(255,255,255,0.5);padding:8px 20px 30px;}
+
+/* LOGIN / OTP screens */
+#screen-login, #screen-otp{background:#fff;color:var(--text-dark);display:flex;flex-direction:column;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
+main{flex:1;padding:clamp(24px,8vw,40px) 20px 24px;width:100%;max-width:480px;margin:0 auto;}
+.logo-wrap{text-align:center;margin-bottom:36px;}
+.logo-row{display:flex;align-items:center;justify-content:center;gap:8px;}
+.logo-mark{width:30px;height:30px;border-radius:50% 50% 50% 0;background:var(--airtel-red);position:relative;transform:rotate(-45deg);flex-shrink:0;}
+.logo-mark::after{content:"";position:absolute;inset:7px;border-radius:50%;background:#fff;}
+.logo-word{font-size:clamp(26px,8vw,34px);font-weight:800;color:var(--airtel-red);}
+.logo-tag{font-size:11px;letter-spacing:1px;color:var(--text-dark);margin-top:2px;font-weight:600;}
+.logo-tag b{color:var(--airtel-red);font-weight:800;}
+.login-title{font-size:clamp(20px,6vw,25px);font-weight:700;color:var(--text-dark);line-height:1.35;margin-bottom:28px;}
+.phone-field{display:flex;align-items:center;gap:8px;border:2px solid var(--border-blue);border-radius:12px;padding:12px 14px;margin-bottom:28px;min-height:52px;}
+.phone-field .flag{width:24px;height:18px;flex-shrink:0;border-radius:2px;overflow:hidden;display:flex;}
+.phone-field .flag svg{width:100%;height:100%;display:block;}
+.phone-field .code{font-size:16px;font-weight:600;}
+.phone-field input{flex:1;border:none;outline:none;font-size:16px;min-width:0;color:var(--text-dark);}
+.phone-field input::placeholder{color:#9b9b9b;}
+.code-label{text-align:center;font-size:14px;color:var(--text-grey);font-weight:600;margin-bottom:14px;}
+.code-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:32px;}
+.code-boxes{display:flex;gap:10px;flex:1;justify-content:center;}
+.code-boxes input{width:100%;max-width:56px;aspect-ratio:1;min-width:40px;min-height:44px;text-align:center;font-size:20px;font-weight:700;border:2px solid var(--border-blue);border-radius:10px;outline:none;color:var(--text-dark);}
+.code-boxes input:focus{border-color:var(--airtel-red);}
+.eye-btn{background:none;border:none;cursor:pointer;color:var(--text-dark);padding:8px;}
+.connexion-btn{width:100%;min-height:52px;border-radius:26px;border:none;background:#d9d9d9;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.5px;cursor:not-allowed;transition:background .2s ease;touch-action:manipulation;}
+.connexion-btn.active{background:var(--airtel-red);cursor:pointer;box-shadow:0 8px 18px rgba(227,6,19,0.3);}
+.connexion-btn.active:active{transform:translateY(1px);}
+
+/* OTP specific */
+.otp-sub{text-align:center;font-size:14px;color:var(--text-grey);line-height:1.55;margin:-12px 0 26px;}
+.otp-sub b{color:var(--text-dark);font-weight:800;letter-spacing:0.3px;}
+.otp-row{display:flex;justify-content:center;margin-bottom:30px;}
+.otp-row .code-boxes{gap:8px;flex:0 1 auto;}
+.otp-row .code-boxes input{max-width:48px;min-width:0;font-size:18px;min-height:48px;}
+.otp-resend{text-align:center;margin-top:24px;font-size:13.5px;color:var(--text-grey);font-weight:600;min-height:22px;}
+.otp-resend b{color:var(--airtel-red);font-weight:800;}
+.resend-btn{background:none;border:none;color:var(--airtel-red);font-size:13.5px;font-weight:800;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+.back-link{display:block;margin:22px auto 0;background:none;border:none;color:var(--text-grey);font-size:13px;font-weight:600;cursor:pointer;padding:10px;}
+.back-link:active{color:var(--airtel-red);}
+
+/* Error modal */
+.invalid-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,0.48);backdrop-filter:blur(6px);z-index:100;}
+.invalid-modal.visible{display:flex;}
+.invalid-card{width:100%;max-width:480px;background:#fff;border-radius:24px;padding:48px 32px 52px;text-align:center;box-shadow:0 20px 55px rgba(0,0,0,0.22);}
+.warning-icon{width:80px;height:70px;margin:0 auto 20px;position:relative;}
+.warning-icon .triangle{width:0;height:0;border-left:40px solid transparent;border-right:40px solid transparent;border-bottom:70px solid #ffc928;position:absolute;inset:0;}
+.warning-icon .mark{position:absolute;left:50%;top:21px;transform:translateX(-50%);width:9px;height:32px;border-radius:6px;background:#252525;z-index:1;}
+.warning-icon .dot{position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#252525;z-index:1;}
+.invalid-card h2{color:#b93a32;font-size:22px;font-weight:800;margin-bottom:16px;}
+.invalid-card p{color:#60646a;font-size:15px;font-weight:600;line-height:1.6;margin-bottom:28px;}
+.invalid-card button{width:100%;min-height:52px;border:none;border-radius:14px;background:linear-gradient(135deg,#df2528,#c81318);color:#fff;font-size:17px;font-weight:800;cursor:pointer;}
+
+/* Waiting overlay */
+.approval-overlay{position:fixed;inset:0;background:rgba(255,255,255,0.97);display:none;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:24px;text-align:center;z-index:50;}
+.approval-overlay.visible{display:flex;}
+.spinner{width:52px;height:52px;border:4px solid #eee;border-top-color:var(--airtel-red);border-radius:50%;animation:spin 0.9s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.approval-overlay h2{font-size:18px;font-weight:800;color:var(--text-dark);}
+.approval-overlay p{font-size:13.5px;color:var(--text-grey);max-width:280px;line-height:1.5;}
+
+/* Success / Blocked */
+#screen-success, #screen-blocked{background:#fff;color:var(--text-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;}
+.success-card{max-width:440px;width:100%;background:#fff;border-radius:24px;padding:48px 32px;box-shadow:0 20px 50px rgba(0,0,0,0.08);}
+.success-icon{width:80px;height:80px;border-radius:50%;background:#e8f5e9;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:40px;}
+.success-card h2{font-size:24px;font-weight:800;margin-bottom:12px;color:#1a1a1a;}
+.success-card p{font-size:15px;color:#60646a;line-height:1.6;margin-bottom:8px;}
+.success-card .detail{margin-top:24px;padding:16px;background:#f7f7f7;border-radius:12px;font-size:14px;text-align:left;}
+.success-card .detail span{font-weight:700;color:var(--airtel-red);}
+
+footer{background:var(--footer-bg);padding:36px 24px 24px;text-align:center;}
+footer .logo-mark{width:26px;height:26px;}
+footer .logo-word{font-size:28px;}
+footer .logo-tag{font-size:11px;letter-spacing:1px;margin-bottom:22px;}
+footer .collab-text{font-size:14px;font-weight:600;}
+footer .collab-brand{font-size:14px;font-weight:700;margin-top:2px;}
+footer hr{border:none;border-top:1px solid #e0e0e0;margin:22px 0 18px;}
+footer .copyright{font-size:12px;color:#9b9b9b;}
+
+@media (max-width:340px){
+  .plans{gap:10px;padding-left:10px;padding-right:10px;}
+  .plan{padding:16px 10px 14px;}
+  .otp-row .code-boxes input{max-width:42px;font-size:16px;}
+}
